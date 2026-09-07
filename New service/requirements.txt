@@ -1,0 +1,18 @@
+# NOTE: pinned to TensorFlow 2.15 (classic Keras 2) on purpose.
+# TF 2.16+ defaults to Keras 3, which breaks DeepFace's age/gender model
+# loading ("layer has never been called and thus has no defined input").
+# TF 2.15 only has wheels for Python 3.9-3.11 - use one of those for this venv.
+flask==3.0.3
+python-dotenv==1.0.1
+pymongo==4.8.0
+deepface==0.0.93
+tensorflow==2.15.0
+mtcnn
+opencv-python==4.10.0.84
+mediapipe==0.10.14
+numpy==1.26.4
+Pillow==10.4.0
+
+# Optional - only needed if you set ANTHROPIC_API_KEY for smarter prompt
+# parsing (see .env.example). The app works without it via keyword matching.
+# anthropic==0.34.0
