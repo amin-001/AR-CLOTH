@@ -1,0 +1,10 @@
+.env
+.env.exmaple
+node_modules/
+venv/
+.eslintrc.cjs
+tailwind.config.js
+tsconfig.json
+tsconfig.node.json
+todo.md
+vercel.json
