@@ -1,0 +1,116 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 210 48% 8%;
+      --foreground: 210 40% 98%;
+
+      --card: 213 40% 12%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 213 40% 12%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 199 89% 52%;
+      --primary-foreground: 222 47% 8%;
+
+      --secondary: 217 33% 16%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217 33% 16%;
+      --muted-foreground: 215 20% 65%;
+
+      --accent: 217 33% 20%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 72% 51%;
+      --destructive-foreground: 0 0% 98%;
+
+      --border: 214 28% 20%;
+      --input: 214 28% 20%;
+      --ring: 199 89% 52%;
+
+      --radius: 1rem;
+    }
+
+    .dark {
+      --background: 210 47% 6%;
+      --foreground: 210 40% 98%;
+
+      --card: 213 38% 9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 213 38% 9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 199 89% 52%;
+      --primary-foreground: 222 47% 8%;
+
+      --secondary: 217 33% 13%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217 33% 13%;
+      --muted-foreground: 215 20% 60%;
+
+      --accent: 217 33% 17%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 72% 51%;
+      --destructive-foreground: 0 0% 98%;
+
+      --border: 214 28% 18%;
+      --input: 214 28% 18%;
+      --ring: 199 89% 52%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+  /* Custom thin scrollbar */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
+/* Soft radial glow behind the hero header */
+.hero-glow {
+  background: radial-gradient(
+    60% 60% at 50% 0%,
+    rgba(56, 189, 248, 0.22),
+    transparent 70%
+  );
+  filter: blur(42px);
+}
+
+/* Force dialog content to stay centered in the viewport */
+[role="dialog"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+
+/* Smooth color/border transitions on interactive elements */
+button,
+a,
+input,
+.transition-shadow {
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
